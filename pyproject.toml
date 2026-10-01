@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kdp-bleed"
+version = "0.1.0"
+description = "Resize print-ready PDFs to Amazon KDP bleed size without re-printing, with guide lines and a margin check."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["pypdf>=4.0", "pymupdf>=1.24"]
+keywords = ["kdp", "pdf", "bleed", "print", "self-publishing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Printing",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+kdp-bleed = "kdp_bleed.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
